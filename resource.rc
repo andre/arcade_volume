@@ -1,0 +1,2 @@
+#define IDR_VOLUME_WAV 101
+IDR_VOLUME_WAV RCDATA "click.wav"

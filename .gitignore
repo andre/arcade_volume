@@ -1,0 +1,3 @@
+# VSCode local settings (safe to ignore)
+.vscode/settings.json
+/build/

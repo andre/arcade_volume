@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		        {
+            "type": "shell",
+            "label": "build",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "main.cpp",
+                "resource.res",
+                "/Fo:${workspaceFolder}/build/",
+                "/Fe:${workspaceFolder}/build/volume.exe",
+                "/link",
+                "/SUBSYSTEM:WINDOWS",
+                "/MACHINE:X64"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "build debug",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "/Zi", // Generate debugging information
+                "/Od", // Disable optimizations for easier debugging
+                "main.cpp",
+                "resource.res",
+                "/Fo:${workspaceFolder}/build/",
+                "/Fe:${workspaceFolder}/build/volume_debug.exe",
+                "/link",
+                "/SUBSYSTEM:WINDOWS",
+                "/MACHINE:X64"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+	]
+}
