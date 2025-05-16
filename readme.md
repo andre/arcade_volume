@@ -1,4 +1,4 @@
-# arcade_cabinet_helper.exe
+# Arcade Cabinet Helper
 
 **What and Why:** handle volume controls and a custom shutdown hotkey SPECIFICALLY for an arcade cabinet shelling directly to an emulation frontend.
 
@@ -12,9 +12,16 @@ The shutdown hotkey is wired to a macro button + some other logic to control pow
 shutdown of Windows before power is cut.
 
 **In summary this program provides:**
-
 1) multimedia key handling with on-screen overlay when `explorer.exe` is not running
 2) a global hotkey to shutdown the computer `(Ctrl+Alt+Y)`
+
+**Using with Coinops RetroFE**
+* Create a `start.bat` file in the Coinops root containing: `start arcade_cabinet_helper.exe`
+* Create an `exit.bat` file in the Coinops root containing: `taskkill /im arcade_cabinet_helper.exe`
+
+**Troubleshooting**
+* _"It's running, but the volume on-screen-display hasn't changed"_: It only renders its custom volume display if explorer.exe is NOT running. Kill explorer.exe in task manager, and then you'll see the custom volume display.
+* _"It works, but the volume display doesn't show when MAME is running"_: MAME runs full-screen and it's complicated to get an OSD to render over a full-screen app. The volume control still works, and you'll still get the audio feedback of volume change.
 
 
 **Areas to note:**
