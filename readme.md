@@ -1,11 +1,11 @@
-# Volume.exe
+# arcade_cabinet_helper.exe
 
-**What and Why:** handle volume controls and a custom shutdown hotkey SPECIFICALLy for an arcade cabinet shelling directly to an emulation frontend.
+**What and Why:** handle volume controls and a custom shutdown hotkey SPECIFICALLY for an arcade cabinet shelling directly to an emulation frontend.
 
 This little program listens for volume up/down and mute "multimedia" keys, and displays an overlay showing the current volume level.
 It ALSO listens for a special global hotkey `(Ctrl+Alt+Y)`, and when that key combo is detected, it shuts down the computer.
 
-This is for the very specific use case of an arcade cabinet shelling directly to an emulation frontend. In this case, `explorer.exe` is NOT around
+This is for the very specific use case of an arcade cabinet shelling directly to an emulation frontend. In this case, `explorer.exe` is not around
 to pick up the volume keys. This program provides the volume control functionality that is otherwise missing when `explorer.exe` is not the shell.
 
 The shutdown hotkey is wired to a macro button + some other logic to control power to various components of the cabinet. The hotkey facilitates a SOFT 
@@ -28,7 +28,7 @@ This is only for Windows.
 **Compilation** 
 * See `tasks.json` for build and debug compilation with vscode.
 * if you're new to vscode (or you're me looking at this a year from now), you have to start vscode as follows: 1) install a bunch of crap using Visual studio installer; 2) launch the "x64 native tools command prompt (windows key, type x64); 3) once the command prompt is up, type `code`, and vscode will open with all the paths needed to compile for x64.
-* I have checked in the `resources.res`, which just contains a sound file. If you change the sound, you need to remake the resource, which is currently not handled in vscode's `tasks.json` to rebuild from the command line: `rc resource.rc`. This will regenerate `resources.res`, which in turn is referenced in the compile/link command in `tasks.json`.
+* I have checked in the `resources.res`, which just contains a sound file. If you change the sound, you need to remake the resource, which is currently not handled in vscode's `tasks.json` to rebuild from the command line: `rc resource.rc`. This will regenerate `resources.res`, which in turn is referenced in the compile/link commands in `tasks.json`.
 
 
 
